@@ -1,0 +1,43 @@
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.deps.json
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.runtimeconfig.json
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.AssemblyReference.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfoInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfo.cs
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.CoreCompileInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\refint\JamalKhanah.Core.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.genruntimeconfig.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\ref\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.deps.json
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.runtimeconfig.json
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.AssemblyReference.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfoInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfo.cs
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.CoreCompileInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\refint\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.genruntimeconfig.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\ref\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.deps.json
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.runtimeconfig.json
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\bin\Release\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.AssemblyInfo.cs
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\refint\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.genruntimeconfig.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\ref\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.Core\obj\Release\net7.0\JamalKhanah.Core.sourcelink.json

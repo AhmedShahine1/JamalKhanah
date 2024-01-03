@@ -1,0 +1,61 @@
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.deps.json
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.AssemblyReference.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfoInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfo.cs
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CopyComplete
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\refint\JamalKhanah.RepositoryLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\ref\JamalKhanah.RepositoryLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.deps.json
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.AssemblyReference.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfoInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfo.cs
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CoreCompileInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CopyComplete
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\refint\JamalKhanah.RepositoryLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\ref\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.deps.json
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfo.cs
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CopyComplete
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\refint\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\ref\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.sourcelink.json
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.deps.json
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.AssemblyInfo.cs
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.csproj.CopyComplete
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\refint\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.RepositoryLayer\obj\Debug\net7.0\ref\JamalKhanah.RepositoryLayer.dll

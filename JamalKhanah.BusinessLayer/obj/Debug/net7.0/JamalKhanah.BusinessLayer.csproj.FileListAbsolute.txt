@@ -1,0 +1,69 @@
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.deps.json
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.AssemblyReference.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfoInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfo.cs
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CopyComplete
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\refint\JamalKhanah.BusinessLayer.dll
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\ref\JamalKhanah.BusinessLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.deps.json
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.AssemblyReference.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfoInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfo.cs
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CoreCompileInputs.cache
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CopyComplete
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\refint\JamalKhanah.BusinessLayer.dll
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+E:\Work\C# Projects\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\ref\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.deps.json
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfo.cs
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CopyComplete
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\refint\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\ref\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.sourcelink.json
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.deps.json
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.RepositoryLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\bin\Debug\net7.0\JamalKhanah.Core.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.AssemblyInfo.cs
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.csproj.CopyComplete
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\refint\JamalKhanah.BusinessLayer.dll
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\JamalKhanah.BusinessLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\JamalKhanah\JamalKhanah.BusinessLayer\obj\Debug\net7.0\ref\JamalKhanah.BusinessLayer.dll
