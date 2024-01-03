@@ -1150,6 +1150,7 @@ public class AccountService : IAccountService
         if (user != null)
         {
             user.Status = false;
+            var smsResult = await SmsService.SendMessage(user.PhoneNumber, "تم رفض طلبك");
             await _userManager.UpdateAsync(user);
         }
     }
@@ -1225,6 +1226,99 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByIdAsync(userId);
         if (user != null)
         {
+            var notificationConfirmed = _unitOfWork.NotificationsConfirmed.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (notificationConfirmed != null)
+            {
+                foreach(var notificationconfirmed in notificationConfirmed)
+                {
+                    var notifications = _unitOfWork.Notifications.FindByQuery(s => s.Id == notificationconfirmed.NotificationId).ToList();
+                    foreach(var notification in notifications)
+                    {
+                        _unitOfWork.Notifications.Delete(notification);
+                    }
+                    _unitOfWork.NotificationsConfirmed.Delete(notificationconfirmed);
+                }
+            }
+            var FavoriteProviders = _unitOfWork.FavoriteProviders.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (FavoriteProviders!= null)
+            {
+                foreach (var FavoriteProvider in FavoriteProviders)
+                {
+                    _unitOfWork.FavoriteProviders.Delete(FavoriteProvider);
+                }
+            }
+            var FavoriteServices = _unitOfWork.FavoriteServices.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (FavoriteServices != null)
+            {
+                foreach (var FavoriteService in FavoriteServices)
+                {
+                    _unitOfWork.FavoriteServices.Delete(FavoriteService);
+                }
+            }
+            var EvaulationServices = _unitOfWork.EvaluationServices.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (EvaulationServices != null)
+            {
+                foreach (var EvaulationService in EvaulationServices)
+                {
+                    _unitOfWork.EvaluationServices.Delete(EvaulationService);
+                }
+            }
+            var EvaluationProviders = _unitOfWork.EvaluationProviders.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (EvaluationProviders != null)
+            {
+                foreach (var EvaluationProvider in EvaluationProviders)
+                {
+                    _unitOfWork.EvaluationProviders.Delete(EvaluationProvider);
+                }
+            }
+            var WorksHours = _unitOfWork.WorksHours.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (WorksHours != null)
+            {
+                foreach (var WorksHour in WorksHours)
+                {
+                    _unitOfWork.WorksHours.Delete(WorksHour);
+                }
+            }
+            var Prizes = _unitOfWork.Prizes.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Prizes != null)
+            {
+                foreach (var Prize in Prizes)
+                {
+                    _unitOfWork.Prizes.Delete(Prize);
+                }
+            }
+            var Experiences = _unitOfWork.Experiences.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Experiences != null)
+            {
+                foreach (var Experience in Experiences)
+                {
+                    _unitOfWork.Experiences.Delete(Experience);
+                }
+            }
+            var Employees = _unitOfWork.Employees.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Employees != null)
+            {
+                foreach (var Employee in Employees)
+                {
+                    _unitOfWork.Employees.Delete(Employee);
+                }
+            }
+            var Services = _unitOfWork.Services.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (Services != null)
+            {
+                foreach (var Service in Services)
+                {
+                    _unitOfWork.Services.Delete(Service);
+                }
+            }
+            var Orders = _unitOfWork.Orders.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Orders != null)
+            {
+                foreach (var Order in Orders)
+                {
+                    _unitOfWork.Orders.Delete(Order);
+                }
+            }
             user.Status = false;
             await _userManager.DeleteAsync(user);
         }

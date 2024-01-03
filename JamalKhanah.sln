@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JamalKhanah", "JamalKhanah\JamalKhanah.csproj", "{737146CF-8944-47B5-B7FC-06DD116900D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamalKhanah", "JamalKhanah\JamalKhanah.csproj", "{737146CF-8944-47B5-B7FC-06DD116900D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JamalKhanah.Core", "JamalKhanah.Core\JamalKhanah.Core.csproj", "{29A4AEB2-ABD2-48D1-91FE-A7E334EECB98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamalKhanah.Core", "JamalKhanah.Core\JamalKhanah.Core.csproj", "{29A4AEB2-ABD2-48D1-91FE-A7E334EECB98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JamalKhanah.RepositoryLayer", "JamalKhanah.RepositoryLayer\JamalKhanah.RepositoryLayer.csproj", "{12769559-B9BA-41A3-A25F-FDA794BF050E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamalKhanah.RepositoryLayer", "JamalKhanah.RepositoryLayer\JamalKhanah.RepositoryLayer.csproj", "{12769559-B9BA-41A3-A25F-FDA794BF050E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JamalKhanah.BusinessLayer", "JamalKhanah.BusinessLayer\JamalKhanah.BusinessLayer.csproj", "{E7D54326-A201-4A57-89E7-57B372A64D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JamalKhanah.BusinessLayer", "JamalKhanah.BusinessLayer\JamalKhanah.BusinessLayer.csproj", "{E7D54326-A201-4A57-89E7-57B372A64D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

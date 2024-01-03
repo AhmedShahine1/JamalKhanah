@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj": {}
+    "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj": {
+    "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj",
         "projectName": "JamalKhanah.Core",
-        "projectPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj",
+        "projectPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.Core\\JamalKhanah.Core.csproj",
         "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.Core\\obj\\",
+        "outputPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",

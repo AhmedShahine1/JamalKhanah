@@ -12759,11 +12759,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah\\JamalKhanah.csproj",
+      "projectUniqueName": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah\\JamalKhanah.csproj",
       "projectName": "JamalKhanah",
-      "projectPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah\\JamalKhanah.csproj",
+      "projectPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah\\JamalKhanah.csproj",
       "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah\\obj\\",
+      "outputPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12780,11 +12780,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.BusinessLayer\\JamalKhanah.BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.BusinessLayer\\JamalKhanah.BusinessLayer.csproj"
+            "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.BusinessLayer\\JamalKhanah.BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.BusinessLayer\\JamalKhanah.BusinessLayer.csproj"
             },
-            "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.RepositoryLayer\\JamalKhanah.RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\JamalKhanah\\JamalKhanah.RepositoryLayer\\JamalKhanah.RepositoryLayer.csproj"
+            "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.RepositoryLayer\\JamalKhanah.RepositoryLayer.csproj": {
+              "projectPath": "C:\\Users\\Ahmed\\Downloads\\Tawredat2\\jamalkhana\\JamalKhanah\\JamalKhanah.RepositoryLayer\\JamalKhanah.RepositoryLayer.csproj"
             }
           }
         }

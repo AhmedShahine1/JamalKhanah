@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\JamalKhanah",
+    "\\JamalKhanah.RepositoryLayer",
+    "\\JamalKhanah.RepositoryLayer\\Repositories"
   ],
+  "SelectedNode": "\\JamalKhanah.RepositoryLayer\\Repositories\\UnitOfWork.cs",
   "PreviewInSolutionExplorer": false
 }

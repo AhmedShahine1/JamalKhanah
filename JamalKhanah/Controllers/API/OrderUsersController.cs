@@ -743,7 +743,25 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
         await _unitOfWork.Orders.AddAsync(order);
         await _unitOfWork.SaveChangesAsync();
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تاكيد الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
 
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.ErrorMessage = lang == "ar"
             ? "تم اضافة الطلب بنجاح "

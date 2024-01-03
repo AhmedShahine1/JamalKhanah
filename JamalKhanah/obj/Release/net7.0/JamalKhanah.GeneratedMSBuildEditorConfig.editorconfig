@@ -9,351 +9,351 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JamalKhanah
 build_property.RootNamespace = JamalKhanah
-build_property.ProjectDir = C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah\
+build_property.ProjectDir = C:\Users\Ahmed\Downloads\Tawredat2\jamalkhana\JamalKhanah\JamalKhanah\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ahmed\Downloads\JamalKhanah\JamalKhanah\JamalKhanah
+build_property.MSBuildProjectDirectory = C:\Users\Ahmed\Downloads\Tawredat2\jamalkhana\JamalKhanah\JamalKhanah
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Account/ChangePassword.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Account/Login.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Addresses/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Addresses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Addresses/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Addresses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Addresses/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Addresses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Admin/ChangePassword.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Admin/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Admin/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Admin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Admin/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Admin/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Admin/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Admin/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Cities/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Cities/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Cities/Delete.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Cities/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Cities/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Cities/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Cities/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Cities/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Cities/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Cities/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Commissions/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Commissions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWlzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Commissions/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Commissions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWlzc2lvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Commissions/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Commissions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWlzc2lvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Commissions/ServiceProviderCommission.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Commissions/ServiceProviderCommission.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWlzc2lvbnNcU2VydmljZVByb3ZpZGVyQ29tbWlzc2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Complaints/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Complaints/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Complaints/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Complaints/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ContactUs/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ContactUs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ContactUs/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ContactUs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ContactUs/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ContactUs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ContactUs/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ContactUs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Coupons/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Coupons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Coupons/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Coupons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Coupons/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Coupons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Coupons/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Coupons/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Dashboard/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Employees/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Employees/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Employees/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ErrorsMvc/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ErrorsMvc/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JzTXZjXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Experiences/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Experiences/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Experiences/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Experiences/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Experiences/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Experiences/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Home/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/MainSections/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/MainSections/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblNlY3Rpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/MainSections/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/MainSections/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblNlY3Rpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/MainSections/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/MainSections/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblNlY3Rpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/MainSections/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/MainSections/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblNlY3Rpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Notifications/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Notifications/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Notifications/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Notifications/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Orders/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Payment/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Payment/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Payment/FetchPayment.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Payment/FetchPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxGZXRjaFBheW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Payment/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Payment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Payment/InitializePayment.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Payment/InitializePayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbml0aWFsaXplUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Prizes/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Prizes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpemVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Prizes/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Prizes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpemVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Prizes/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Prizes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpemVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1NlY3Rpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1NlY3Rpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswersSections/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1NlY3Rpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/QuestionsAndAnswers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zQW5kQW5zd2Vyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceProvider/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceProvider/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceProvider/EditCenter.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceProvider/EditCenter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEVkaXRDZW50ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceProvider/EditFreeAgent.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceProvider/EditFreeAgent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEVkaXRGcmVlQWdlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceProvider/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceProvider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Services/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Services/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Services/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Services/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Services/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Services/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Services/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceUser/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceUser/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVVzZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceUser/EditUser.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceUser/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVVzZXJcRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/ServiceUser/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/ServiceUser/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVVzZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Shared/Error.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Shared/_Layout.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Shared/_MainLayout.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Shared/_MainLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/SlidePhotos/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/SlidePhotos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQaG90b3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/SlidePhotos/Delete.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/SlidePhotos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQaG90b3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/SlidePhotos/Details.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/SlidePhotos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQaG90b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/SlidePhotos/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/SlidePhotos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQaG90b3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/SlidePhotos/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/SlidePhotos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQaG90b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/well_known/pki-validation.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/well_known/pki-validation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncd2VsbF9rbm93blxwa2ktdmFsaWRhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/WorkHours/Create.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/WorkHours/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0hvdXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/WorkHours/Edit.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/WorkHours/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0hvdXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/WorkHours/Index.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/WorkHours/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0hvdXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/_ViewImports.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Downloads/JamalKhanah/JamalKhanah/JamalKhanah/Views/_ViewStart.cshtml]
+[C:/Users/Ahmed/Downloads/Tawredat2/jamalkhana/JamalKhanah/JamalKhanah/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

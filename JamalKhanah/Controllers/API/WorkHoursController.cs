@@ -192,8 +192,17 @@ public class WorkHoursController : BaseApiController, IActionFilter
             _baseResponse.ErrorMessage = (lang == "ar") ? "لا يملك الحساب صلاحية اضافة أوقات عمل " : "The account does not have the authority to add WorkHours ";
             return Ok(_baseResponse);
         }
-     
 
+        var workHours = await _unitOfWork.WorksHours.FindByQuery(
+        criteria: s => s.UserId == _user.Id && s.IsDeleted == false && s.Day== workHour.Day)
+        .Select(s => new
+        {
+            s.Id,
+            s.Day,
+            s.From,
+            s.To,
+            s.MoreData
+        }).ToListAsync();
         var newWorkHour = new WorkHours()
         {
            Day = workHour.Day,
@@ -206,7 +215,12 @@ public class WorkHoursController : BaseApiController, IActionFilter
         };
 
   
-        
+        if(workHours.Count > 0 )
+        {
+            _baseResponse.ErrorCode = 0;
+            _baseResponse.ErrorMessage = (lang == "ar") ? "لقد تم اختيار هذا الموعد من قبل" : "WorkHour Not Added";
+            return Ok(_baseResponse);
+        }
         await _unitOfWork.WorksHours.AddAsync(newWorkHour);
         await _unitOfWork.SaveChangesAsync();
 
