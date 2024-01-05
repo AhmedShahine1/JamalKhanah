@@ -1,6 +1,9 @@
 ﻿using JamalKhanah.BusinessLayer.Interfaces;
+using JamalKhanah.BusinessLayer.Services;
 using JamalKhanah.Core.DTO;
+using JamalKhanah.Core.DTO.NotificationModel;
 using JamalKhanah.Core.Entity.ApplicationData;
+using JamalKhanah.Core.Entity.ChatAndNotification;
 using JamalKhanah.Core.Helpers;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -18,10 +21,15 @@ public class OrderProvidersController : BaseApiController, IActionFilter
     private readonly IUnitOfWork _unitOfWork;
     private readonly IFileHandling _fileHandling;
     private readonly BaseResponse _baseResponse;
+    private readonly NotificationModel _notificationModel;
+    private readonly INotificationService _notificationService;
+
     private ApplicationUser _user;
 
-    public OrderProvidersController(IUnitOfWork unitOfWork, IFileHandling fileHandling)
+    public OrderProvidersController(INotificationService notificationService, IUnitOfWork unitOfWork, IFileHandling fileHandling)
     {
+        _notificationService = notificationService;
+        _notificationModel = new NotificationModel();
         _unitOfWork = unitOfWork;
         _fileHandling = fileHandling;
         _baseResponse = new BaseResponse();
@@ -167,10 +175,48 @@ public class OrderProvidersController : BaseApiController, IActionFilter
             case (int)OrderStatus.WithDriver:
                 order.OrderStatus = OrderStatus.WithDriver;
                 break;
+        };
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تغيير حاله الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
         }
+        var User = await _unitOfWork.Users.FindByQuery(
+                s => s.Id == order.UserId )
+            .FirstOrDefaultAsync();
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تغيير حاله الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
 
-        ;
+            {
+                _notificationModel.DeviceId = User.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = User.Id });
+                await _unitOfWork.SaveChangesAsync();
 
+            }
+        }
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
 

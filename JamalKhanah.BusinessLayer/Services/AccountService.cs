@@ -1247,6 +1247,14 @@ public class AccountService : IAccountService
                     _unitOfWork.FavoriteProviders.Delete(FavoriteProvider);
                 }
             }
+            FavoriteProviders = _unitOfWork.FavoriteProviders.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (FavoriteProviders != null)
+            {
+                foreach (var FavoriteProvider in FavoriteProviders)
+                {
+                    _unitOfWork.FavoriteProviders.Delete(FavoriteProvider);
+                }
+            }
             var FavoriteServices = _unitOfWork.FavoriteServices.FindByQuery(s => s.UserId == user.Id).ToList();
             if (FavoriteServices != null)
             {
@@ -1319,6 +1327,15 @@ public class AccountService : IAccountService
                     _unitOfWork.Orders.Delete(Order);
                 }
             }
+            var Complaints = _unitOfWork.Complaints.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Complaints != null)
+            {
+                foreach (var Complaint in Complaints)
+                {
+                    _unitOfWork.Complaints.Delete(Complaint);
+                }
+            }
+
             user.Status = false;
             await _userManager.DeleteAsync(user);
         }

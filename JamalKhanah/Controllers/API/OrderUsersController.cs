@@ -748,7 +748,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
             var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
             notification.Title = "طلب خدمه";
             notification.CreatedOn = DateTime.Now;
-            notification.Body = "تم تاكيد الطلب بنجاح";
+            notification.Body = "تم اضافة الطلب بنجاح";
             await _unitOfWork.Notifications.AddAsync(notification);
             await _unitOfWork.SaveChangesAsync();
 
@@ -762,6 +762,30 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
             }
         }
+        var User = await _unitOfWork.Users.FindByQuery(
+        s => s.Id == service.ProviderId)
+    .FirstOrDefaultAsync();
+
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم طلب الخدمه منك الرجاء مراجعه الحساب";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = User.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = User.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
+
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.ErrorMessage = lang == "ar"
             ? "تم اضافة الطلب بنجاح "
@@ -866,6 +890,25 @@ public class OrderUsersController : BaseApiController, IActionFilter
                 : "The Order Not Exist ";
             return Ok(_baseResponse);
         }
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم حذف الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
 
         _unitOfWork.Orders.Delete(order);
         await _unitOfWork.SaveChangesAsync();
@@ -909,6 +952,26 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
         order.OrderStatus = OrderStatus.Cancelled;
         order.UpdatedAt = DateTime.Now;
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم الغاء الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
+
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
 
