@@ -7,10 +7,13 @@ using JamalKhanah.Core.Helpers;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
+using System.Globalization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace JamalKhanah.Controllers.API;
 
@@ -59,7 +62,6 @@ public class WorkHoursController : BaseApiController, IActionFilter
                 : "The User Not Exist ";
             return Ok(_baseResponse);
         }
-        int day = (int)System.DateTime.Now.DayOfWeek;
         var workHour = _unitOfWork.WorksHours.FindByQuery(
         criteria: s => s.IsDeleted == false)
         .ToList();
@@ -67,7 +69,9 @@ public class WorkHoursController : BaseApiController, IActionFilter
         {
             foreach (WorkHours item in workHour)
             {
-                if((int)item.Day == day-1 || (day == 0 && (int)item.Day == 6))
+                DateTime yesterday = DateTime.Today.AddDays(-1);
+                DateTime date = DateTime.ParseExact(item.MoreData, "yyyy-MM-ddTHH:mm:ss.fff", CultureInfo.InvariantCulture);
+                if (date.Date == yesterday.Date)
                 {
                     item.IsDeleted = true;
                     item.DeletedAt = DateTime.Now;
@@ -199,7 +203,6 @@ public class WorkHoursController : BaseApiController, IActionFilter
             _baseResponse.Data = new { message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage)) };
             return Ok(_baseResponse);
         }
-
         if (_user.UserType != UserType.Center && _user.UserType != UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
@@ -207,7 +210,7 @@ public class WorkHoursController : BaseApiController, IActionFilter
             return Ok(_baseResponse);
         }
         var workHours = await _unitOfWork.WorksHours.FindByQuery(
-        criteria: s => s.UserId == _user.Id && s.IsDeleted == false && s.Day==workHour.Day)
+        criteria: s => s.UserId == _user.Id && s.IsDeleted == false && s.MoreData==workHour.MoreData)
         .Select(s => new
         {
             s.Id,
