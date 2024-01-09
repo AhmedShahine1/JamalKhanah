@@ -168,9 +168,34 @@ public class OrderProvidersController : BaseApiController, IActionFilter
                 order.OrderStatus = OrderStatus.WithDriver;
                 break;
         }
+<<<<<<< Updated upstream
 
         ;
 
+=======
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تغيير حاله الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _unitOfWork.Users.FindByQuery(criteria: s => s.Id == order.UserId).FirstOrDefault().DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
+        var User = await _unitOfWork.Users.FindByQuery(
+                s => s.Id == order.UserId )
+            .FirstOrDefaultAsync();
+>>>>>>> Stashed changes
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
 

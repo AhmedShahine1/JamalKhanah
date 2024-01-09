@@ -16,6 +16,7 @@ using System.Security.Claims;
 using System.Text;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using System.ComponentModel;
+using JamalKhanah.Core.Entity.SectionsData;
 
 namespace JamalKhanah.BusinessLayer.Services;
 
@@ -920,8 +921,8 @@ public class AccountService : IAccountService
         return result;
     }
 
-
     //----------------------*------------------------------------------------------------------------------------
+
     public async Task<AuthModel> UpdateCenterProfileAdmin(string userId, UpdateCenterModel model)
     {
         var user = await _userManager.FindByIdAsync(userId);
@@ -1139,7 +1140,7 @@ public class AccountService : IAccountService
         if (user != null)
         {
             user.Status = true;
-            var smsResult = await SmsService.SendMessage(user.PhoneNumber, "تم الموافقه علي طلبك");
+            var smsResult = await SmsService.SendMessage(user.PhoneNumber, "تم الموافقه علي تفعيل حسابك");
             await _userManager.UpdateAsync(user);
         }
     }
@@ -1150,6 +1151,10 @@ public class AccountService : IAccountService
         if (user != null)
         {
             user.Status = false;
+<<<<<<< Updated upstream
+=======
+            var smsResult = await SmsService.SendMessage(user.PhoneNumber, " تم رفض طلبك علي تفعيل حسابك");
+>>>>>>> Stashed changes
             await _userManager.UpdateAsync(user);
         }
     }
@@ -1180,6 +1185,7 @@ public class AccountService : IAccountService
         if (user != null)
         {
             user.IsApproved = true;
+            var smsResult = await SmsService.SendMessage(user.PhoneNumber, "تم الموافقه علي طلبك");
             await _userManager.UpdateAsync(user);
         }
     }
@@ -1190,6 +1196,7 @@ public class AccountService : IAccountService
         if (user == null) return false;
         try
         {
+            var smsResult = await SmsService.SendMessage(user.PhoneNumber, "تم رفض طلبك");
             await _userManager.DeleteAsync(user);
             return true;
         }
@@ -1225,8 +1232,188 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByIdAsync(userId);
         if (user != null)
         {
+<<<<<<< Updated upstream
+=======
+            var notificationConfirmed = _unitOfWork.NotificationsConfirmed.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (notificationConfirmed.Count()!=0)
+            {
+                foreach(var notificationconfirmed in notificationConfirmed)
+                {
+                    var notifications = _unitOfWork.Notifications.FindByQuery(s => s.Id == notificationconfirmed.NotificationId).ToList();
+                    foreach(var notification in notifications)
+                    {
+                        _unitOfWork.Notifications.Delete(notification);
+                    }
+                    _unitOfWork.NotificationsConfirmed.Delete(notificationconfirmed);
+                }
+            }
+            var FavoriteProviders = _unitOfWork.FavoriteProviders.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (FavoriteProviders.Count() != 0)
+            {
+                foreach (var FavoriteProvider in FavoriteProviders)
+                {
+                    _unitOfWork.FavoriteProviders.Delete(FavoriteProvider);
+                }
+            }
+            FavoriteProviders = _unitOfWork.FavoriteProviders.FindByQuery(s => s.UserId == user.Id||s.ProviderId==user.Id).ToList();
+            if (FavoriteProviders.Count() != 0)
+            {
+                foreach (var FavoriteProvider in FavoriteProviders)
+                {
+                    _unitOfWork.FavoriteProviders.Delete(FavoriteProvider);
+                }
+            }
+            var FavoriteServices = _unitOfWork.FavoriteServices.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (FavoriteServices.Count() != 0)
+            {
+                foreach (var FavoriteService in FavoriteServices)
+                {
+                    _unitOfWork.FavoriteServices.Delete(FavoriteService);
+                }
+            }
+            var EvaulationServices = _unitOfWork.EvaluationServices.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (EvaulationServices.Count() != 0)
+            {
+                foreach (var EvaulationService in EvaulationServices)
+                {
+                    _unitOfWork.EvaluationServices.Delete(EvaulationService);
+                }
+            }
+            var EvaluationProviders = _unitOfWork.EvaluationProviders.FindByQuery(s => s.UserId == user.Id||s.ProviderId==user.Id).ToList();
+            if (EvaluationProviders.Count() != 0)
+            {
+                foreach (var EvaluationProvider in EvaluationProviders)
+                {
+                    _unitOfWork.EvaluationProviders.Delete(EvaluationProvider);
+                }
+            }
+            var WorksHours = _unitOfWork.WorksHours.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (WorksHours.Count() != 0)
+            {
+                foreach (var WorksHour in WorksHours)
+                {
+                    _unitOfWork.WorksHours.Delete(WorksHour);
+                }
+            }
+            var Prizes = _unitOfWork.Prizes.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Prizes.Count() != 0)
+            {
+                foreach (var Prize in Prizes)
+                {
+                    _unitOfWork.Prizes.Delete(Prize);
+                }
+            }
+            var Experiences = _unitOfWork.Experiences.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Experiences.Count() != 0)
+            {
+                foreach (var Experience in Experiences)
+                {
+                    _unitOfWork.Experiences.Delete(Experience);
+                }
+            }
+            var Employees = _unitOfWork.Employees.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Employees.Count() != 0)
+            {
+                foreach (var Employee in Employees)
+                {
+                    _unitOfWork.Employees.Delete(Employee);
+                }
+            }
+            var Orders = _unitOfWork.Orders.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Orders.Count() != 0)
+            {
+                foreach (var Order in Orders)
+                {
+                    var PaymentHistories = _unitOfWork.PaymentHistories.FindByQuery(s => s.OrderId == Order.Id).ToList();
+                    if (PaymentHistories.Count() != 0)
+                    {
+                        foreach (var PaymentHistorie in PaymentHistories)
+                        {
+                            _unitOfWork.PaymentHistories.Delete(PaymentHistorie);
+                        }
+                    }
+
+                    _unitOfWork.Orders.Delete(Order);
+                }
+            }
+            var Services = _unitOfWork.Services.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (Services.Count() != 0)
+            {
+                foreach (var Service in Services)
+                {
+                    EvaulationServices = _unitOfWork.EvaluationServices.FindByQuery(s => s.ServiceId == Service.Id).ToList();
+                    if (EvaulationServices.Count() != 0)
+                    {
+                        foreach (var EvaulationService in EvaulationServices)
+                        {
+                            _unitOfWork.EvaluationServices.Delete(EvaulationService);
+                        }
+                    }
+                    Orders = _unitOfWork.Orders.FindByQuery(s => s.ServiceId == Service.Id).ToList();
+                    if (Orders.Count() != 0)
+                    {
+                        foreach (var Order in Orders)
+                        {
+                            _unitOfWork.Orders.Delete(Order);
+                        }
+                    }
+                    var ServiceCoupons = _unitOfWork.ServiceCoupons.FindByQuery(s => s.ServiceId == Service.Id).ToList();
+                    if (ServiceCoupons.Count() != 0)
+                    {
+                        foreach (var ServiceCoupon in ServiceCoupons)
+                        {
+                            _unitOfWork.ServiceCoupons.Delete(ServiceCoupon);
+                        }
+                    }
+                    FavoriteServices = _unitOfWork.FavoriteServices.FindByQuery(s => s.ServiceId == Service.Id).ToList();
+                    if (FavoriteServices.Count() != 0)
+                    {
+                        foreach (var FavoriteService in FavoriteServices)
+                        {
+                            _unitOfWork.FavoriteServices.Delete(FavoriteService);
+                        }
+                    }
+
+                    _unitOfWork.Services.Delete(Service);
+                }
+            }
+            var Complaints = _unitOfWork.Complaints.FindByQuery(s => s.UserId == user.Id).ToList();
+            if (Complaints.Count() != 0)
+            {
+                foreach (var Complaint in Complaints)
+                {
+                    _unitOfWork.Complaints.Delete(Complaint);
+                }
+            }
+            var ProviderPhotos = _unitOfWork.ProviderPhotos.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (ProviderPhotos.Count() != 0)
+            {
+                foreach (var ProviderPhoto in ProviderPhotos)
+                {
+                    _unitOfWork.ProviderPhotos.Delete(ProviderPhoto);
+                }
+            }
+            var Commissions = _unitOfWork.Commissions.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (Commissions.Count() != 0)
+            {
+                foreach (var Commission in Commissions)
+                {
+                    _unitOfWork.Commissions.Delete(Commission);
+                }
+            }
+            var UserCoupons = _unitOfWork.UserCoupons.FindByQuery(s => s.ProviderId == user.Id).ToList();
+            if (UserCoupons.Count() != 0)
+            {
+                foreach (var UserCoupon in UserCoupons)
+                {
+                    _unitOfWork.UserCoupons.Delete(UserCoupon);
+                }
+            }
+
+>>>>>>> Stashed changes
             user.Status = false;
             await _userManager.DeleteAsync(user);
+            _unitOfWork.SaveChanges();
         }
     }
 

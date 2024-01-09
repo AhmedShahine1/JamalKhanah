@@ -56,30 +56,6 @@ public class NotificationController : BaseApiController
         _unitOfWork.Users.Update(result);
         await _unitOfWork.SaveChangesAsync();
 
-        if (notifications.Count > 0)
-        {
-            foreach (var notification in notifications.Where(notification => !notificationsConfirmed.Contains(notification)))
-            {
-                _notificationModel.DeviceId = notificationDto.Token;
-                _notificationModel.Title = notification.Title;
-                _notificationModel.Body = notification.Body;
-                var notificationResult = await _notificationService.SendNotification(_notificationModel);
-                if (notificationResult.IsSuccess)
-                {
-                    await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = userId });
-                    await _unitOfWork.SaveChangesAsync();
-
-                }
-                else
-                {
-                    _baseResponse.ErrorCode = (int)Errors.SomeThingWentWrong;
-                    _baseResponse.ErrorMessage = (lang == "ar") ? notificationResult.Message + "test" : notificationResult.Message;
-                    _baseResponse.Data = null;
-                    return BadRequest(_baseResponse);
-
-                }
-            }
-        }
 
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.ErrorMessage = (lang == "ar") ? "تم الإرسال" : "Sent";
@@ -103,17 +79,6 @@ public class NotificationController : BaseApiController
 
 	    var notificationsConfirmed = _unitOfWork.NotificationsConfirmed.FindByQuery(s => s.UserId == userId)
 		    .Select(s => s.Notification).OrderByDescending(s => s.CreatedOn).ToList();
-	    var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
-
-	    if (notifications.Count > 0)
-	    {
-		    foreach (var notification in notifications.Where(notification => !notificationsConfirmed.Contains(notification)))
-		    {
-			    await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = userId });
-			    await _unitOfWork.SaveChangesAsync();
-		    }
-	    }
-
 	    _baseResponse.ErrorCode = (int)Errors.Success;
 	    _baseResponse.ErrorMessage = (lang == "ar") ? "تم الإرسال" : "Sent";
 	    _baseResponse.Data = notificationsConfirmed;

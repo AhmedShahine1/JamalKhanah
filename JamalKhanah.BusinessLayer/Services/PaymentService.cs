@@ -6,16 +6,21 @@ using Moyasar;
 using Moyasar.Services;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using JamalKhanah.Core.DTO.EntityDto;
+using JamalKhanah.Core.Entity.ChatAndNotification;
 
 namespace JamalKhanah.BusinessLayer.Services;
 
 public class PaymentService : IPaymentService
 {
+    private readonly INotificationService _notificationService;
+    private readonly NotificationModel _notificationModel;
     private readonly PaymentSettings _paymentSettings;
     private readonly IUnitOfWork _unitOfWork;
 
-    public PaymentService(IOptions<PaymentSettings> paymentSettings, IUnitOfWork unitOfWork)
+    public PaymentService(INotificationService notificationService, IOptions<PaymentSettings> paymentSettings, IUnitOfWork unitOfWork)
     {
+        _notificationModel = new NotificationModel();
+        _notificationService = notificationService;
         _paymentSettings = paymentSettings.Value;
         _unitOfWork = unitOfWork;
     }
@@ -173,7 +178,63 @@ public class PaymentService : IPaymentService
                 payment.Source_Token = savePaymentDto.Source?.Token;
                 payment.Source_Transaction_url = savePaymentDto.Source?.Transaction_url;
                 payment.Source_Type = savePaymentDto.Source?.Type;
+                var order = _unitOfWork.Orders.FindByQuery(
+                    criteria: s => s.Id == payment.OrderId)
+                .Select(s => new
+                {
+                    Provider = new
+                    {
+                        s.Service.Provider.Id,
+                        s.Service.Provider.FullName,
+                        s.Service.Provider.PhoneNumber,
+                        s.Service.Provider.Email,
+                        s.Service.Provider.DeviceToken
+                    },
+                    User = new
+                    {
+                        s.User.Id,
+                        s.User.FullName,
+                        s.User.PhoneNumber,
+                        s.User.Email,
+                        s.User.DeviceToken
+                    }
+                }).FirstOrDefault();
+                {
+                    Notification notification = new Notification();
+                    var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+                    notification.Title = "طلب خدمه";
+                    notification.CreatedOn = DateTime.Now;
+                    notification.Body = "تم طلب الخدمه منك الرجاء مراجعه الحساب";
+                    await _unitOfWork.Notifications.AddAsync(notification);
+                    await _unitOfWork.SaveChangesAsync();
+                    {
+                        _notificationModel.DeviceId = order.Provider.DeviceToken;
+                        _notificationModel.Title = notification.Title;
+                        _notificationModel.Body = notification.Body;
+                        var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                        await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = order.Provider.Id });
+                        await _unitOfWork.SaveChangesAsync();
 
+                    }
+                }
+                {
+                    Notification notification = new Notification();
+                    var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+                    notification.Title = "طلب خدمه";
+                    notification.CreatedOn = DateTime.Now;
+                    notification.Body = "تم دفع الخدمه سيتم التواصل معك عند قبول الخدمه";
+                    await _unitOfWork.Notifications.AddAsync(notification);
+                    await _unitOfWork.SaveChangesAsync();
+                    {
+                        _notificationModel.DeviceId = order.User.DeviceToken;
+                        _notificationModel.Title = notification.Title;
+                        _notificationModel.Body = notification.Body;
+                        var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                        await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = order.User.Id });
+                        await _unitOfWork.SaveChangesAsync();
+
+                    }
+                }
                 _unitOfWork.PaymentHistories.Update(payment);
                 await _unitOfWork.SaveChangesAsync();
                 response.IsSuccess = true;
