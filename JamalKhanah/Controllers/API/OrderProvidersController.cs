@@ -1,6 +1,8 @@
 ﻿using JamalKhanah.BusinessLayer.Interfaces;
 using JamalKhanah.Core.DTO;
+using JamalKhanah.Core.DTO.NotificationModel;
 using JamalKhanah.Core.Entity.ApplicationData;
+using JamalKhanah.Core.Entity.ChatAndNotification;
 using JamalKhanah.Core.Helpers;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,9 +21,13 @@ public class OrderProvidersController : BaseApiController, IActionFilter
     private readonly IFileHandling _fileHandling;
     private readonly BaseResponse _baseResponse;
     private ApplicationUser _user;
+    private readonly NotificationModel _notificationModel;
+    private readonly INotificationService _notificationService;
 
-    public OrderProvidersController(IUnitOfWork unitOfWork, IFileHandling fileHandling)
+    public OrderProvidersController(INotificationService notificationService, IUnitOfWork unitOfWork, IFileHandling fileHandling)
     {
+        _notificationService = notificationService;
+        _notificationModel = new NotificationModel();
         _unitOfWork = unitOfWork;
         _fileHandling = fileHandling;
         _baseResponse = new BaseResponse();
@@ -168,11 +174,6 @@ public class OrderProvidersController : BaseApiController, IActionFilter
                 order.OrderStatus = OrderStatus.WithDriver;
                 break;
         }
-<<<<<<< Updated upstream
-
-        ;
-
-=======
         {
             Notification notification = new Notification();
             var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
@@ -195,7 +196,6 @@ public class OrderProvidersController : BaseApiController, IActionFilter
         var User = await _unitOfWork.Users.FindByQuery(
                 s => s.Id == order.UserId )
             .FirstOrDefaultAsync();
->>>>>>> Stashed changes
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
 

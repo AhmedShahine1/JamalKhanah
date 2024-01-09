@@ -743,14 +743,12 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
         await _unitOfWork.Orders.AddAsync(order);
         await _unitOfWork.SaveChangesAsync();
-<<<<<<< Updated upstream
 
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.ErrorMessage = lang == "ar"
             ? "تم اضافة الطلب بنجاح "
             : "Add Order Successfully ";
         return Ok(_baseResponse);
-=======
         {
             Notification notification = new Notification();
             var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
@@ -778,7 +776,6 @@ public class OrderUsersController : BaseApiController, IActionFilter
         ? "تم اضافة الطلب بنجاح "
         : "Add Order Successfully ";
     return Ok(_baseResponse);
->>>>>>> Stashed changes
     }
 
     //---------------------------------------------------------------------------------------------------------

@@ -1151,10 +1151,7 @@ public class AccountService : IAccountService
         if (user != null)
         {
             user.Status = false;
-<<<<<<< Updated upstream
-=======
             var smsResult = await SmsService.SendMessage(user.PhoneNumber, " تم رفض طلبك علي تفعيل حسابك");
->>>>>>> Stashed changes
             await _userManager.UpdateAsync(user);
         }
     }
@@ -1232,8 +1229,7 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByIdAsync(userId);
         if (user != null)
         {
-<<<<<<< Updated upstream
-=======
+
             var notificationConfirmed = _unitOfWork.NotificationsConfirmed.FindByQuery(s => s.UserId == user.Id).ToList();
             if (notificationConfirmed.Count()!=0)
             {
@@ -1410,7 +1406,6 @@ public class AccountService : IAccountService
                 }
             }
 
->>>>>>> Stashed changes
             user.Status = false;
             await _userManager.DeleteAsync(user);
             _unitOfWork.SaveChanges();
