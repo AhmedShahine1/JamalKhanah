@@ -1369,7 +1369,6 @@ public class AccountService : IAccountService
                             _unitOfWork.FavoriteServices.Delete(FavoriteService);
                         }
                     }
-
                     _unitOfWork.Services.Delete(Service);
                 }
             }

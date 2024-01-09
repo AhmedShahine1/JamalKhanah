@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JamalKhanah")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d7357ff1f2ccb24f82dd9a9c56afdda1562e298")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+050abd186d8a917b4d7415de2eada1688b6b00d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("JamalKhanah")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JamalKhanah")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
