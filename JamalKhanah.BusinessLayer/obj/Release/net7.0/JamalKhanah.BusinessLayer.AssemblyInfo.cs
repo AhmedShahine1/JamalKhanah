@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JamalKhanah.BusinessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+050abd186d8a917b4d7415de2eada1688b6b00d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+717842c676685c02dfe4cc0ddd92ce8c5ce6b04c")]
 [assembly: System.Reflection.AssemblyProductAttribute("JamalKhanah.BusinessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JamalKhanah.BusinessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,10 +7,13 @@ using JamalKhanah.Core.Helpers;
 using JamalKhanah.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
+using System.Globalization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace JamalKhanah.Controllers.API;
 
@@ -20,7 +23,7 @@ public class WorkHoursController : BaseApiController, IActionFilter
     private readonly IUnitOfWork _unitOfWork;
     private readonly IFileHandling _fileHandling;
     private readonly BaseResponse _baseResponse;
-    private  ApplicationUser _user;
+    private ApplicationUser _user;
     public WorkHoursController(IUnitOfWork unitOfWork, IFileHandling fileHandling)
     {
         _unitOfWork = unitOfWork;
@@ -40,11 +43,11 @@ public class WorkHoursController : BaseApiController, IActionFilter
         _user = user;
     }
 
-        
+
     [ApiExplorerSettings(IgnoreApi = true)]
     public void OnActionExecuted(ActionExecutedContext context)
     {
- 
+
     }
     //---------------------------------------------------------------------------------------------------  
     // GET: api/WorkHours
@@ -59,24 +62,40 @@ public class WorkHoursController : BaseApiController, IActionFilter
                 : "The User Not Exist ";
             return Ok(_baseResponse);
         }
-        var workHours = await _unitOfWork.WorksHours.FindByQuery(
-            criteria: s =>  s.UserId == _user.Id  && s.IsDeleted == false)
-            .Select(s=>new
+        var workHour = _unitOfWork.WorksHours.FindByQuery(
+        criteria: s => s.IsDeleted == false)
+        .ToList();
+        if (workHour != null)
+        {
+            foreach (WorkHours item in workHour)
             {
-                s.Id,
-                s.Day,
-                s.From,
-                s.To,
-                s.MoreData
-            }).ToListAsync();
-
+                DateTime yesterday = DateTime.Today.AddDays(-1);
+                DateTime date = DateTime.ParseExact(item.MoreData, "yyyy-MM-ddTHH:mm:ss.fff", CultureInfo.InvariantCulture);
+                if (date.Date == yesterday.Date)
+                {
+                    item.IsDeleted = true;
+                    item.DeletedAt = DateTime.Now;
+                    _unitOfWork.WorksHours.Update(item);
+                    await _unitOfWork.SaveChangesAsync();
+                }
+            }
+        }
+        var workHours = await _unitOfWork.WorksHours.FindByQuery(
+        criteria: s => s.UserId == _user.Id && s.IsDeleted == false)
+        .Select(s => new
+        {
+            s.Id,
+            s.Day,
+            s.From,
+            s.To,
+            s.MoreData
+        }).ToListAsync();
         if (!workHours.Any())
         {
             _baseResponse.ErrorCode = (int)Errors.WorkHourNotFound;
             _baseResponse.ErrorMessage = (lang == "ar") ? "لا توجد أوقات عمل للمستخدم " : " Work hour Not Found";
             return Ok(_baseResponse);
         }
-
         _baseResponse.ErrorCode = 0;
         _baseResponse.Data = workHours;
         return Ok(_baseResponse);
@@ -96,7 +115,7 @@ public class WorkHoursController : BaseApiController, IActionFilter
         }
         var workHour = await _unitOfWork.WorksHours.FindByQuery(
             criteria: s => s.Id == id && s.UserId == _user.Id && s.IsDeleted == false)
-            .Select(s=>new
+            .Select(s => new
             {
                 s.Id,
                 s.Day,
@@ -111,7 +130,6 @@ public class WorkHoursController : BaseApiController, IActionFilter
             _baseResponse.ErrorMessage = (lang == "ar") ? "لا توجد أوقات عمل للمستخدم " : " Work hour Not Found";
             return Ok(_baseResponse);
         }
-
         _baseResponse.ErrorCode = 0;
         _baseResponse.Data = workHour;
         return Ok(_baseResponse);
@@ -149,13 +167,13 @@ public class WorkHoursController : BaseApiController, IActionFilter
             return Ok(_baseResponse);
         }
 
-       
+
         workHourToUpdate.Day = workHour.Day;
         workHourToUpdate.From = new TimeSpan(TimeOnly.FromDateTime(workHour.From).Ticks);
         workHourToUpdate.To = new TimeSpan(TimeOnly.FromDateTime(workHour.To).Ticks);
         workHourToUpdate.MoreData = workHour.MoreData;
         workHourToUpdate.IsUpdated = true;
-        workHourToUpdate.UpdatedAt = DateTime.Now; 
+        workHourToUpdate.UpdatedAt = DateTime.Now;
         _unitOfWork.WorksHours.Update(workHourToUpdate);
         await _unitOfWork.SaveChangesAsync();
 
@@ -185,28 +203,40 @@ public class WorkHoursController : BaseApiController, IActionFilter
             _baseResponse.Data = new { message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage)) };
             return Ok(_baseResponse);
         }
-
         if (_user.UserType != UserType.Center && _user.UserType != UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
             _baseResponse.ErrorMessage = (lang == "ar") ? "لا يملك الحساب صلاحية اضافة أوقات عمل " : "The account does not have the authority to add WorkHours ";
             return Ok(_baseResponse);
         }
-     
-
+        var workHours = await _unitOfWork.WorksHours.FindByQuery(
+        criteria: s => s.UserId == _user.Id && s.IsDeleted == false && s.MoreData == workHour.MoreData)
+        .Select(s => new
+        {
+            s.Id,
+            s.Day,
+            s.From,
+            s.To,
+            s.MoreData
+        }).ToListAsync();
         var newWorkHour = new WorkHours()
         {
-           Day = workHour.Day,
-           From = new TimeSpan(TimeOnly.FromDateTime(workHour.From).Ticks),
-           To = new TimeSpan(TimeOnly.FromDateTime(workHour.To).Ticks),
+            Day = workHour.Day,
+            From = new TimeSpan(TimeOnly.FromDateTime(workHour.From).Ticks),
+            To = new TimeSpan(TimeOnly.FromDateTime(workHour.To).Ticks),
             MoreData = workHour.MoreData,
             UserId = _user.Id,
             IsDeleted = false,
             IsUpdated = false
         };
 
-  
-        
+
+        if (workHours.Count != 0)
+        {
+            _baseResponse.ErrorCode = 4;
+            _baseResponse.ErrorMessage = (lang == "ar") ? "لقد تم اختيار هذا الموعد من قبل" : "WorkHour Not Added";
+            return Ok(_baseResponse);
+        }
         await _unitOfWork.WorksHours.AddAsync(newWorkHour);
         await _unitOfWork.SaveChangesAsync();
 
@@ -231,7 +261,7 @@ public class WorkHoursController : BaseApiController, IActionFilter
         }
 
         var workHour = await _unitOfWork.WorksHours.FindByQuery(
-                criteria: s => s.Id == id  && s.UserId == _user.Id && s.IsDeleted == false)
+                criteria: s => s.Id == id && s.UserId == _user.Id && s.IsDeleted == false)
             .FirstOrDefaultAsync();
 
         if (workHour == null)

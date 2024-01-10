@@ -31,14 +31,14 @@ public class OrderUsersController : BaseApiController, IActionFilter
     private readonly NotificationModel _notificationModel;
     private ApplicationUser _user;
 
-    public OrderUsersController(INotificationService notificationService,IUnitOfWork unitOfWork, IFileHandling fileHandling, IHttpContextAccessor httpContextAccessor)
+    public OrderUsersController(INotificationService notificationService, IUnitOfWork unitOfWork, IFileHandling fileHandling, IHttpContextAccessor httpContextAccessor)
     {
-        _notificationService= notificationService;
+        _notificationService = notificationService;
         _unitOfWork = unitOfWork;
         _fileHandling = fileHandling;
         _baseResponse = new BaseResponse();
         _httpContextAccessor = httpContextAccessor;
-        _notificationModel=new NotificationModel();
+        _notificationModel = new NotificationModel();
     }
 
     [ApiExplorerSettings(IgnoreApi = true)]
@@ -233,9 +233,9 @@ public class OrderUsersController : BaseApiController, IActionFilter
                 s.Total,
                 s.OrderStatus,
                 s.InHome,
-                Coupon=s.Coupon==null? null: s.Coupon.CouponCode,
+                Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
                 s.Discount,
-				AddressData = new
+                AddressData = new
                 {
                     name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
                     s.Region,
@@ -266,7 +266,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
                     s.User.PhoneNumber,
                     s.User.Email
                 }
-                
+
             }).FirstOrDefaultAsync();
 
         if (order == null)
@@ -283,138 +283,138 @@ public class OrderUsersController : BaseApiController, IActionFilter
         return Ok(_baseResponse);
     }
 
-	[HttpPut("AddCouponToOrder")]
-	public async Task<ActionResult<BaseResponse>> AddCouponToOrder([FromHeader] string lang, OrderCouponDto model)
-	{
-		if (_user == null)
-		{
-			_baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
-			_baseResponse.ErrorMessage = lang == "ar"
-				? "هذا الحساب غير موجود "
-				: "The User Not Exist ";
-			return Ok(_baseResponse);
-		}
-		if (!ModelState.IsValid)
-		{
-			_baseResponse.ErrorMessage = (lang == "ar") ? "خطأ في البيانات" : "Error in data";
-			_baseResponse.ErrorCode = (int)Errors.TheModelIsInvalid;
-			_baseResponse.Data = new
-			{
-				message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage))
-			};
-			return Ok(_baseResponse);
-		}
-        var orders = await _unitOfWork.Orders.FindByQuery(criteria: s =>s.UserId == _user.Id  && s.IsDeleted == false,include: s=>s.Include(order=>order.Coupon),isNoTracking: true)
-			.ToListAsync();
+    [HttpPut("AddCouponToOrder")]
+    public async Task<ActionResult<BaseResponse>> AddCouponToOrder([FromHeader] string lang, OrderCouponDto model)
+    {
+        if (_user == null)
+        {
+            _baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "هذا الحساب غير موجود "
+                : "The User Not Exist ";
+            return Ok(_baseResponse);
+        }
+        if (!ModelState.IsValid)
+        {
+            _baseResponse.ErrorMessage = (lang == "ar") ? "خطأ في البيانات" : "Error in data";
+            _baseResponse.ErrorCode = (int)Errors.TheModelIsInvalid;
+            _baseResponse.Data = new
+            {
+                message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage))
+            };
+            return Ok(_baseResponse);
+        }
+        var orders = await _unitOfWork.Orders.FindByQuery(criteria: s => s.UserId == _user.Id && s.IsDeleted == false, include: s => s.Include(order => order.Coupon), isNoTracking: true)
+            .ToListAsync();
         if (!orders.Any())
         {
-	        _baseResponse.ErrorCode = (int)Errors.NoData;
-	        _baseResponse.ErrorMessage = lang == "ar"
-		        ? "لا يوجد طلبات "
-		        : "No Orders ";
-	        return Ok(_baseResponse);
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد طلبات "
+                : "No Orders ";
+            return Ok(_baseResponse);
         }
-        var coupon = await _unitOfWork.Coupons.FindByQuery(criteria: s => s.CouponCode == model.CouponCode && s.IsDeleted == false && s.IsActive == true, 
-	        include: s=>s.Include(coupon=>coupon.MainSections).Include(coupon=>coupon.Services).Include(coupon=>coupon.Providers)
-	        ).FirstOrDefaultAsync();
+        var coupon = await _unitOfWork.Coupons.FindByQuery(criteria: s => s.CouponCode == model.CouponCode && s.IsDeleted == false && s.IsActive == true,
+            include: s => s.Include(coupon => coupon.MainSections).Include(coupon => coupon.Services).Include(coupon => coupon.Providers)
+            ).FirstOrDefaultAsync();
         if (coupon == null)
         {
-	        _baseResponse.ErrorCode = (int)Errors.NoData;
-	        _baseResponse.ErrorMessage = lang == "ar"
-		        ? "لا يوجد كوبون "
-		        : "No Coupon ";
-	        return Ok(_baseResponse);
-		}
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد كوبون "
+                : "No Coupon ";
+            return Ok(_baseResponse);
+        }
 
         if (orders.Any(s => s.CouponId == coupon.Id))
         {
-			_baseResponse.ErrorCode = (int)Errors.InvalidData;
-			_baseResponse.ErrorMessage = lang == "ar"
-				? "هذا الكوبون مستخدم من قبل "
-				: "This Coupon Used Before ";
-			return Ok(_baseResponse);
-		}
+            _baseResponse.ErrorCode = (int)Errors.InvalidData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "هذا الكوبون مستخدم من قبل "
+                : "This Coupon Used Before ";
+            return Ok(_baseResponse);
+        }
 
-        var order =await _unitOfWork.Orders.FindByQuery(s => s.OrderStatus == OrderStatus.Initialized && s.Id == model.OrderId && s.CouponId== null && s.UserId == _user.Id && s.IsDeleted == false,
-	        include:s=>s.Include(order=>order.Service).ThenInclude(service=>service.MainSection).Include(order => order.Service).ThenInclude(service => service.Provider)).FirstOrDefaultAsync();
+        var order = await _unitOfWork.Orders.FindByQuery(s => s.OrderStatus == OrderStatus.Initialized && s.Id == model.OrderId && s.CouponId == null && s.UserId == _user.Id && s.IsDeleted == false,
+            include: s => s.Include(order => order.Service).ThenInclude(service => service.MainSection).Include(order => order.Service).ThenInclude(service => service.Provider)).FirstOrDefaultAsync();
         if (order == null)
         {
-	        _baseResponse.ErrorCode = (int)Errors.NoData;
-	        _baseResponse.ErrorMessage = lang == "ar"
-		        ? "لا يوجد طلب بهذا الرقم "
-		        : "No Order have this Id ";
-	        return Ok(_baseResponse);
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد طلب بهذا الرقم "
+                : "No Order have this Id ";
+            return Ok(_baseResponse);
         }
 
-        if (coupon.ExpireDate!= null && coupon.ExpireDate> DateTime.Now)
+        if (coupon.ExpireDate != null && coupon.ExpireDate > DateTime.Now)
         {
             _baseResponse.ErrorCode = (int)Errors.InvalidData;
-	        _baseResponse.ErrorMessage = lang == "ar"
-		        ? "هذا الكوبون منتهي الصلاحية "
-		        : "This Coupon Expired ";
-	        return Ok(_baseResponse);
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "هذا الكوبون منتهي الصلاحية "
+                : "This Coupon Expired ";
+            return Ok(_baseResponse);
         }
 
-		switch (coupon.CouponType)
-		{
-			case CouponType.MainSections:
-			{
-				if (coupon.MainSections.All(s => s.MainSectionId != order.Service.MainSectionId))
-				{
-					_baseResponse.ErrorCode = (int)Errors.InvalidData;
-					_baseResponse.ErrorMessage = lang == "ar"
-						? "هذا الكوبون غير متاح لهذا القسم "
-						: "This Coupon Not Available For This Section ";
-					return Ok(_baseResponse);
-				}
+        switch (coupon.CouponType)
+        {
+            case CouponType.MainSections:
+                {
+                    if (coupon.MainSections.All(s => s.MainSectionId != order.Service.MainSectionId))
+                    {
+                        _baseResponse.ErrorCode = (int)Errors.InvalidData;
+                        _baseResponse.ErrorMessage = lang == "ar"
+                            ? "هذا الكوبون غير متاح لهذا القسم "
+                            : "This Coupon Not Available For This Section ";
+                        return Ok(_baseResponse);
+                    }
 
-				break;
-			}
-			case CouponType.Service:
-			{
-				if (coupon.Services.All(s => s.ServiceId != order.ServiceId))
-				{
-					_baseResponse.ErrorCode = (int)Errors.InvalidData;
-					_baseResponse.ErrorMessage = lang == "ar"
-						? "هذا الكوبون غير متاح لهذه الخدمة "
-						: "This Coupon Not Available For This Service ";
-					return Ok(_baseResponse);
-				}
+                    break;
+                }
+            case CouponType.Service:
+                {
+                    if (coupon.Services.All(s => s.ServiceId != order.ServiceId))
+                    {
+                        _baseResponse.ErrorCode = (int)Errors.InvalidData;
+                        _baseResponse.ErrorMessage = lang == "ar"
+                            ? "هذا الكوبون غير متاح لهذه الخدمة "
+                            : "This Coupon Not Available For This Service ";
+                        return Ok(_baseResponse);
+                    }
 
-				break;
-			}
-			case CouponType.ServiceProvider:
-			{
-				if (coupon.Providers.All(s => s.ProviderId != order.Service.ProviderId))
-				{
-					_baseResponse.ErrorCode = (int)Errors.InvalidData;
-					_baseResponse.ErrorMessage = lang == "ar"
-						? "هذا الكوبون غير متاح لهذا المقدم "
-						: "This Coupon Not Available For This Provider ";
-					return Ok(_baseResponse);
-				}
+                    break;
+                }
+            case CouponType.ServiceProvider:
+                {
+                    if (coupon.Providers.All(s => s.ProviderId != order.Service.ProviderId))
+                    {
+                        _baseResponse.ErrorCode = (int)Errors.InvalidData;
+                        _baseResponse.ErrorMessage = lang == "ar"
+                            ? "هذا الكوبون غير متاح لهذا المقدم "
+                            : "This Coupon Not Available For This Provider ";
+                        return Ok(_baseResponse);
+                    }
 
-				break;
-			}
-			case CouponType.None:
-			default:
-				_baseResponse.ErrorCode = (int)Errors.InvalidData;
-				_baseResponse.ErrorMessage = lang == "ar"
-					? "هذا الكوبون غير متاح "
-					: "This Coupon Not Available ";
-				return Ok(_baseResponse);
-		}
+                    break;
+                }
+            case CouponType.None:
+            default:
+                _baseResponse.ErrorCode = (int)Errors.InvalidData;
+                _baseResponse.ErrorMessage = lang == "ar"
+                    ? "هذا الكوبون غير متاح "
+                    : "This Coupon Not Available ";
+                return Ok(_baseResponse);
+        }
 
         if (coupon.DiscountType == DiscountType.Percentage)
         {
-	        order.Discount = (order.Total * coupon.Discount / 100);
-			order.Total -= (order.Total * coupon.Discount / 100);
-           
-		}
+            order.Discount = (order.Total * coupon.Discount / 100);
+            order.Total -= (order.Total * coupon.Discount / 100);
+
+        }
         else
         {
-	        order.Discount = coupon.Discount;
-			order.Total -= coupon.Discount;
+            order.Discount = coupon.Discount;
+            order.Total -= coupon.Discount;
         }
         order.CouponId = coupon.Id;
         _unitOfWork.Orders.Update(order);
@@ -422,70 +422,70 @@ public class OrderUsersController : BaseApiController, IActionFilter
         _unitOfWork.Orders.DeAttach(order);
 
 
-        
 
-	var newOrder = await _unitOfWork.Orders.FindByQuery(
-				criteria: s => s.Id == model.OrderId &&
-							   s.UserId == _user.Id &&
-							   s.IsDeleted == false)
-			.Select(s => new
-			{
-				s.Id,
-				s.CreatedOn,
-				s.Total,
-				s.OrderStatus,
-				s.InHome,
-                s.Discount,
-                Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
-				AddressData = new
-				{
-					name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
-					s.Region,
-					s.Street,
-					s.BuildingNumber,
-					s.FlatNumber,
-					s.AddressDetails,
-				},
-				Service = new
-				{
-					s.Service.Id,
-					title = lang == "ar" ? s.Service.TitleAr : s.Service.TitleEn,
-					s.Service.IsAvailable,
-					s.Service.FinalPrice,
-					s.Service.ImgUrl
-				},
-				Provider = new
-				{
-					s.Service.Provider.Id,
-					s.Service.Provider.FullName,
-					s.Service.Provider.PhoneNumber,
-					s.Service.Provider.Email,
-				},
-				User = new
-				{
-					s.User.Id,
-					s.User.FullName,
-					s.User.PhoneNumber,
-					s.User.Email
-				}
-			}).FirstOrDefaultAsync();
 
-		if (newOrder == null)
-		{
-			_baseResponse.ErrorCode = (int)Errors.NoData;
-			_baseResponse.ErrorMessage = lang == "ar"
-				? "لا يوجد طلبات "
-				: "No Orders ";
-			return Ok(_baseResponse);
-		}
+        var newOrder = await _unitOfWork.Orders.FindByQuery(
+                    criteria: s => s.Id == model.OrderId &&
+                                   s.UserId == _user.Id &&
+                                   s.IsDeleted == false)
+                .Select(s => new
+                {
+                    s.Id,
+                    s.CreatedOn,
+                    s.Total,
+                    s.OrderStatus,
+                    s.InHome,
+                    s.Discount,
+                    Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
+                    AddressData = new
+                    {
+                        name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
+                        s.Region,
+                        s.Street,
+                        s.BuildingNumber,
+                        s.FlatNumber,
+                        s.AddressDetails,
+                    },
+                    Service = new
+                    {
+                        s.Service.Id,
+                        title = lang == "ar" ? s.Service.TitleAr : s.Service.TitleEn,
+                        s.Service.IsAvailable,
+                        s.Service.FinalPrice,
+                        s.Service.ImgUrl
+                    },
+                    Provider = new
+                    {
+                        s.Service.Provider.Id,
+                        s.Service.Provider.FullName,
+                        s.Service.Provider.PhoneNumber,
+                        s.Service.Provider.Email,
+                    },
+                    User = new
+                    {
+                        s.User.Id,
+                        s.User.FullName,
+                        s.User.PhoneNumber,
+                        s.User.Email
+                    }
+                }).FirstOrDefaultAsync();
 
-		_baseResponse.ErrorCode = (int)Errors.Success;
-		_baseResponse.Data = newOrder;
-		return Ok(_baseResponse);
-	}
+        if (newOrder == null)
+        {
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد طلبات "
+                : "No Orders ";
+            return Ok(_baseResponse);
+        }
 
-	//-----------------------------------------------------------------------------------------------------
-	[HttpGet("GetOrders")]
+        _baseResponse.ErrorCode = (int)Errors.Success;
+        _baseResponse.Data = newOrder;
+        return Ok(_baseResponse);
+    }
+
+    //-----------------------------------------------------------------------------------------------------
+    [HttpGet("GetOrders")]
     public async Task<ActionResult<BaseResponse>> GetOrders([FromHeader] string lang)
     {
         if (_user == null)
@@ -619,7 +619,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
                 s.InHome,
                 Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
                 s.Discount,
-				AddressData = new
+                AddressData = new
                 {
                     name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
                     s.Region,
@@ -628,7 +628,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
                     s.FlatNumber,
                     s.AddressDetails,
                 },
-              
+
                 Service = new
                 {
                     s.Service.Id,
@@ -700,7 +700,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
         }
 
         var address = await _unitOfWork.Addresses.FindByQuery(
-                criteria: s => s.Id == orderDto.AddressId && s.UserId == _user.Id&&
+                criteria: s => s.Id == orderDto.AddressId && s.UserId == _user.Id &&
                                s.IsDeleted == false)
             .FirstOrDefaultAsync();
 
@@ -729,7 +729,7 @@ public class OrderUsersController : BaseApiController, IActionFilter
             AddressDetails = address.AddressDetails,
             PaymentMethod = PaymentMethod.Online,
             StartingOn = orderDto.StartingOn,
-            IsPaid =  false,
+            IsPaid = false,
 
         };
 
@@ -743,18 +743,12 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
         await _unitOfWork.Orders.AddAsync(order);
         await _unitOfWork.SaveChangesAsync();
-
-        _baseResponse.ErrorCode = (int)Errors.Success;
-        _baseResponse.ErrorMessage = lang == "ar"
-            ? "تم اضافة الطلب بنجاح "
-            : "Add Order Successfully ";
-        return Ok(_baseResponse);
         {
             Notification notification = new Notification();
             var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
             notification.Title = "طلب خدمه";
             notification.CreatedOn = DateTime.Now;
-            notification.Body = " تم اضافة الطلب بنجاح توجه لدفع الخدمه المطلوبه";
+            notification.Body = "تم اضافة الطلب بنجاح توجهه لدفع قيمه الخدمه";
             await _unitOfWork.Notifications.AddAsync(notification);
             await _unitOfWork.SaveChangesAsync();
 
@@ -771,11 +765,32 @@ public class OrderUsersController : BaseApiController, IActionFilter
         var User = await _unitOfWork.Users.FindByQuery(
         s => s.Id == service.ProviderId)
     .FirstOrDefaultAsync();
-    _baseResponse.ErrorCode = (int)Errors.Success;
-    _baseResponse.ErrorMessage = lang == "ar"
-        ? "تم اضافة الطلب بنجاح "
-        : "Add Order Successfully ";
-    return Ok(_baseResponse);
+
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم طلب الخدمه منك الرجاء مراجعه الحساب";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = User.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = User.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
+
+        _baseResponse.ErrorCode = (int)Errors.Success;
+        _baseResponse.ErrorMessage = lang == "ar"
+            ? "تم اضافة الطلب بنجاح "
+            : "Add Order Successfully ";
+        return Ok(_baseResponse);
     }
 
     //---------------------------------------------------------------------------------------------------------
@@ -820,12 +835,31 @@ public class OrderUsersController : BaseApiController, IActionFilter
         order.UpdatedAt = DateTime.Now;
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تاكيد الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.ErrorMessage = lang == "ar"
             ? "تم تأكيد الطلب بنجاح "
             : "Confirm Order Successfully ";
         return Ok(_baseResponse);
-        }
+    }
 
     //---------------------------------------------------------------------------------------------------------
     // Remove order
@@ -855,6 +889,25 @@ public class OrderUsersController : BaseApiController, IActionFilter
                 ? "هذا الطلب غير موجود "
                 : "The Order Not Exist ";
             return Ok(_baseResponse);
+        }
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم حذف الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
         }
 
         _unitOfWork.Orders.Delete(order);
@@ -899,6 +952,26 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
         order.OrderStatus = OrderStatus.Cancelled;
         order.UpdatedAt = DateTime.Now;
+        {
+            Notification notification = new Notification();
+            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم الغاء الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
+                await _unitOfWork.SaveChangesAsync();
+
+            }
+        }
+
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
 
@@ -914,41 +987,41 @@ public class OrderUsersController : BaseApiController, IActionFilter
     [HttpPost("RemoveCoupon")]
     public async Task<ActionResult<BaseResponse>> RemoveCoupon([FromHeader] string lang, OrderCouponDto model)
     {
-	    if (_user == null)
-	    {
-		    _baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
-		    _baseResponse.ErrorMessage = lang == "ar"
-			    ? "هذا الحساب غير موجود "
-			    : "The User Not Exist ";
-		    return Ok(_baseResponse);
-	    }
-	    if (!ModelState.IsValid)
-	    {
-		    _baseResponse.ErrorMessage = (lang == "ar") ? "خطأ في البيانات" : "Error in data";
-		    _baseResponse.ErrorCode = (int)Errors.TheModelIsInvalid;
-		    _baseResponse.Data = new
-		    {
-			    message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage))
-		    };
-		    return Ok(_baseResponse);
-	    }
-	    var order = await _unitOfWork.Orders.FindByQuery(s => s.OrderStatus == OrderStatus.Initialized && s.Id == model.OrderId && s.Coupon.CouponCode==model.CouponCode && s.UserId == _user.Id && s.IsDeleted == false,
-			    include: s=>s.Include(order=>order.Coupon))
-		    .FirstOrDefaultAsync();
-	    if (order == null)
-	    {
-		    _baseResponse.ErrorCode = (int)Errors.NoData;
-		    _baseResponse.ErrorMessage = lang == "ar"
-			    ? "لا يوجد طلب بهذا الرقم مع هذا الكوبون "
-			    : "No Order have this Id and this coupon code  ";
-		    return Ok(_baseResponse);
-	    }
+        if (_user == null)
+        {
+            _baseResponse.ErrorCode = (int)Errors.TheUserNotExistOrDeleted;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "هذا الحساب غير موجود "
+                : "The User Not Exist ";
+            return Ok(_baseResponse);
+        }
+        if (!ModelState.IsValid)
+        {
+            _baseResponse.ErrorMessage = (lang == "ar") ? "خطأ في البيانات" : "Error in data";
+            _baseResponse.ErrorCode = (int)Errors.TheModelIsInvalid;
+            _baseResponse.Data = new
+            {
+                message = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage))
+            };
+            return Ok(_baseResponse);
+        }
+        var order = await _unitOfWork.Orders.FindByQuery(s => s.OrderStatus == OrderStatus.Initialized && s.Id == model.OrderId && s.Coupon.CouponCode == model.CouponCode && s.UserId == _user.Id && s.IsDeleted == false,
+                include: s => s.Include(order => order.Coupon))
+            .FirstOrDefaultAsync();
+        if (order == null)
+        {
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد طلب بهذا الرقم مع هذا الكوبون "
+                : "No Order have this Id and this coupon code  ";
+            return Ok(_baseResponse);
+        }
 
-	    order.Total += order.Discount;
-	    order.Discount = 0;
-	    order.CouponId = null;
-	    order.Coupon = null;
-	    order.UpdatedAt = DateTime.Now;
+        order.Total += order.Discount;
+        order.Discount = 0;
+        order.CouponId = null;
+        order.Coupon = null;
+        order.UpdatedAt = DateTime.Now;
         _unitOfWork.Orders.Update(order);
         await _unitOfWork.SaveChangesAsync();
         _unitOfWork.Orders.DeAttach(order);
@@ -957,63 +1030,63 @@ public class OrderUsersController : BaseApiController, IActionFilter
 
 
         var newOrder = await _unitOfWork.Orders.FindByQuery(
-		        criteria: s => s.Id == model.OrderId &&
-		                       s.UserId == _user.Id &&
-		                       s.IsDeleted == false)
-	        .Select(s => new
-	        {
-		        s.Id,
-		        s.CreatedOn,
-		        s.Total,
-		        s.OrderStatus,
-		        s.InHome,
-		        s.Discount,
-		        Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
-		        AddressData = new
-		        {
-			        name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
-			        s.Region,
-			        s.Street,
-			        s.BuildingNumber,
-			        s.FlatNumber,
-			        s.AddressDetails,
-		        },
-		        Service = new
-		        {
-			        s.Service.Id,
-			        title = lang == "ar" ? s.Service.TitleAr : s.Service.TitleEn,
-			        s.Service.IsAvailable,
-			        s.Service.FinalPrice,
-			        s.Service.ImgUrl
-		        },
-		        Provider = new
-		        {
-			        s.Service.Provider.Id,
-			        s.Service.Provider.FullName,
-			        s.Service.Provider.PhoneNumber,
-			        s.Service.Provider.Email,
-		        },
-		        User = new
-		        {
-			        s.User.Id,
-			        s.User.FullName,
-			        s.User.PhoneNumber,
-			        s.User.Email
-		        }
-	        }).FirstOrDefaultAsync();
+                criteria: s => s.Id == model.OrderId &&
+                               s.UserId == _user.Id &&
+                               s.IsDeleted == false)
+            .Select(s => new
+            {
+                s.Id,
+                s.CreatedOn,
+                s.Total,
+                s.OrderStatus,
+                s.InHome,
+                s.Discount,
+                Coupon = s.Coupon == null ? null : s.Coupon.CouponCode,
+                AddressData = new
+                {
+                    name = (lang == "ar" ? s.City.NameAr : s.City.NameEn),
+                    s.Region,
+                    s.Street,
+                    s.BuildingNumber,
+                    s.FlatNumber,
+                    s.AddressDetails,
+                },
+                Service = new
+                {
+                    s.Service.Id,
+                    title = lang == "ar" ? s.Service.TitleAr : s.Service.TitleEn,
+                    s.Service.IsAvailable,
+                    s.Service.FinalPrice,
+                    s.Service.ImgUrl
+                },
+                Provider = new
+                {
+                    s.Service.Provider.Id,
+                    s.Service.Provider.FullName,
+                    s.Service.Provider.PhoneNumber,
+                    s.Service.Provider.Email,
+                },
+                User = new
+                {
+                    s.User.Id,
+                    s.User.FullName,
+                    s.User.PhoneNumber,
+                    s.User.Email
+                }
+            }).FirstOrDefaultAsync();
 
         if (newOrder == null)
         {
-	        _baseResponse.ErrorCode = (int)Errors.NoData;
-	        _baseResponse.ErrorMessage = lang == "ar"
-		        ? "لا يوجد طلبات "
-		        : "No Orders ";
-	        return Ok(_baseResponse);
+            _baseResponse.ErrorCode = (int)Errors.NoData;
+            _baseResponse.ErrorMessage = lang == "ar"
+                ? "لا يوجد طلبات "
+                : "No Orders ";
+            return Ok(_baseResponse);
         }
 
         _baseResponse.ErrorCode = (int)Errors.Success;
         _baseResponse.Data = newOrder;
         return Ok(_baseResponse);
 
-	}
+    }
 }

@@ -182,7 +182,6 @@ public class OrderProvidersController : BaseApiController, IActionFilter
             notification.Body = "تم تغيير حاله الطلب بنجاح";
             await _unitOfWork.Notifications.AddAsync(notification);
             await _unitOfWork.SaveChangesAsync();
-
             {
                 _notificationModel.DeviceId = _unitOfWork.Users.FindByQuery(criteria: s => s.Id == order.UserId).FirstOrDefault().DeviceToken;
                 _notificationModel.Title = notification.Title;
@@ -190,7 +189,6 @@ public class OrderProvidersController : BaseApiController, IActionFilter
                 var notificationResult = await _notificationService.SendNotification(_notificationModel);
                 await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
                 await _unitOfWork.SaveChangesAsync();
-
             }
         }
         var User = await _unitOfWork.Users.FindByQuery(
