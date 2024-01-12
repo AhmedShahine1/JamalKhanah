@@ -104,6 +104,7 @@ public class ServicesController : BaseApiController, IActionFilter
                     s.PriceUnit,
                     s.Price,
                     s.Discount,
+                    s.Duration,
                     s.FinalPrice,
                     s.InCenter,
                     s.InHome,
@@ -212,6 +213,7 @@ public class ServicesController : BaseApiController, IActionFilter
                         s.IsFeatured,
                         s.PriceUnit,
                         s.Price,
+                        s.Duration,
                         s.Discount,
                         s.FinalPrice,
                         s.InCenter,
@@ -316,6 +318,7 @@ public class ServicesController : BaseApiController, IActionFilter
                     s.IsFeatured,
                     s.PriceUnit,
                     s.Price,
+                    s.Duration,
                     s.Discount,
                     s.FinalPrice,
                     s.InCenter,
@@ -453,6 +456,7 @@ public class ServicesController : BaseApiController, IActionFilter
                     s.PriceUnit,
                     s.Price,
                     s.Discount,
+                    s.Duration,
                     s.FinalPrice,
                     s.InCenter,
                     s.InHome,
@@ -599,6 +603,7 @@ public class ServicesController : BaseApiController, IActionFilter
                 Price = serviceDto.Price,
                 Discount = serviceDto.Discount,
                 FinalPrice = serviceDto.FinalPrice,
+                Duration= serviceDto.Duration,
                 InCenter = _user.UserType != UserType.FreeAgent && serviceDto.InCenter,
                 InHome = serviceDto.InHome,
                 EmployeesNumber = _user.UserType == UserType.FreeAgent ? 0 : serviceDto.EmployeesNumber,
@@ -733,6 +738,7 @@ public class ServicesController : BaseApiController, IActionFilter
         service.Price = serviceDto.Price;
         service.Discount = serviceDto.Discount;
         service.FinalPrice = serviceDto.FinalPrice;
+        service.Duration = serviceDto.Duration;
         service.InCenter = _user.UserType != UserType.FreeAgent && serviceDto.InCenter;
         service.InHome = serviceDto.InHome;
         service.EmployeesNumber = _user.UserType == UserType.FreeAgent ? 0 : serviceDto.EmployeesNumber;
@@ -806,7 +812,7 @@ public class ServicesController : BaseApiController, IActionFilter
             return Ok(_baseResponse);
         }
 
-        if (_user.UserType is not UserType.Center or UserType.FreeAgent)
+        if (_user.UserType is not UserType.Center && _user.UserType is not UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotProvider;
             _baseResponse.ErrorMessage = lang == "ar"

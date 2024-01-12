@@ -765,32 +765,11 @@ public class OrderUsersController : BaseApiController, IActionFilter
         var User = await _unitOfWork.Users.FindByQuery(
         s => s.Id == service.ProviderId)
     .FirstOrDefaultAsync();
-
-        {
-            Notification notification = new Notification();
-            var notifications = (await _unitOfWork.Notifications.GetAllAsync()).ToList();
-            notification.Title = "طلب خدمه";
-            notification.CreatedOn = DateTime.Now;
-            notification.Body = "تم طلب الخدمه منك الرجاء مراجعه الحساب";
-            await _unitOfWork.Notifications.AddAsync(notification);
-            await _unitOfWork.SaveChangesAsync();
-
-            {
-                _notificationModel.DeviceId = User.DeviceToken;
-                _notificationModel.Title = notification.Title;
-                _notificationModel.Body = notification.Body;
-                var notificationResult = await _notificationService.SendNotification(_notificationModel);
-                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = User.Id });
-                await _unitOfWork.SaveChangesAsync();
-
-            }
-        }
-
-        _baseResponse.ErrorCode = (int)Errors.Success;
-        _baseResponse.ErrorMessage = lang == "ar"
-            ? "تم اضافة الطلب بنجاح "
-            : "Add Order Successfully ";
-        return Ok(_baseResponse);
+    _baseResponse.ErrorCode = (int)Errors.Success;
+    _baseResponse.ErrorMessage = lang == "ar"
+        ? "تم اضافة الطلب بنجاح "
+        : "Add Order Successfully ";
+    return Ok(_baseResponse);
     }
 
     //---------------------------------------------------------------------------------------------------------

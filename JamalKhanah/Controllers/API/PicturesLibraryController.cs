@@ -60,7 +60,7 @@ public class PicturesLibraryController : BaseApiController, IActionFilter
                 : "The User Not Exist ";
             return Ok(_baseResponse);
         }
-        if (_user.UserType is not UserType.Center or UserType.FreeAgent)
+        if (_user.UserType is not UserType.Center && _user.UserType is not UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotProvider;
             _baseResponse.ErrorMessage = lang == "ar"
@@ -125,7 +125,7 @@ public class PicturesLibraryController : BaseApiController, IActionFilter
                 : "The User Not Exist ";
             return Ok(_baseResponse);
         }
-        if (_user.UserType is not UserType.Center or UserType.FreeAgent)
+        if (_user.UserType is not UserType.Center && _user.UserType is not UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotProvider;
             _baseResponse.ErrorMessage = lang == "ar"
@@ -186,7 +186,7 @@ public class PicturesLibraryController : BaseApiController, IActionFilter
             return Ok(_baseResponse);
         }
 
-        if (_user.UserType is not UserType.Center or UserType.FreeAgent)
+        if (_user.UserType is not UserType.Center && _user.UserType is not UserType.FreeAgent)
         {
             _baseResponse.ErrorCode = (int)Errors.TheUserNotProvider;
             _baseResponse.ErrorMessage = lang == "ar"

@@ -17,6 +17,7 @@ public class ServiceDto
     [Display(Name = "وصف الخدمة ")]
     public string Description { get; set; }
 
+    [Required(ErrorMessage ="رفع الصورة مطلوب")]
     [Display(Name = " الصورة  ")]
     public string Img { get; set; }
 
