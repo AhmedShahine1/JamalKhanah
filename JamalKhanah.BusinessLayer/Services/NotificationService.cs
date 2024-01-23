@@ -29,7 +29,7 @@ public class NotificationService : INotificationService
             app = FirebaseApp.Create(new AppOptions()
             {
                 Credential = GoogleCredential.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Auth.json")),
-            });
+            },"myApp");
         }
         catch (Exception ex)
         {
@@ -52,34 +52,6 @@ public class NotificationService : INotificationService
 
         var result = await fcm.SendAsync(message);
         ResponseModel response = new ResponseModel();
-        //try
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        var firebaseOptionsServerId = _fcmNotificationSetting.ServerKey;
-        //        var firebaseOptionsSenderId = _fcmNotificationSetting.SenderId;
-
-        //        client.BaseAddress = new Uri("https://fcm.googleapis.com");
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization",
-        //            $"key={firebaseOptionsServerId}");
-        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Sender", $"id={firebaseOptionsSenderId}");
-
-
-        //        var data = new
-        //        {
-        //            to = notificationModel.DeviceId,
-        //            data = new
-        //            {
-        //                body = notificationModel.Body,
-        //                title = notificationModel.Title,
-        //            },
-        //            priority = "high"
-        //        };
-
-        //        var json = JsonConvert.SerializeObject(data);
-        //        var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-        //        var result = await client.PostAsync("/fcm/send", httpContent);
         if (result!=null)
         {
             response.IsSuccess = true;

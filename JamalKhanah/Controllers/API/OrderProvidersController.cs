@@ -186,6 +186,22 @@ public class OrderProvidersController : BaseApiController, IActionFilter
                 _notificationModel.Title = notification.Title;
                 _notificationModel.Body = notification.Body;
                 var notificationResult = await _notificationService.SendNotification(_notificationModel);
+                await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = order.UserId });
+                await _unitOfWork.SaveChangesAsync();
+            }
+        }
+        {
+            Notification notification = new Notification();
+            notification.Title = "طلب خدمه";
+            notification.CreatedOn = DateTime.Now;
+            notification.Body = "تم تغيير حاله الطلب بنجاح";
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+            {
+                _notificationModel.DeviceId = _user.DeviceToken;
+                _notificationModel.Title = notification.Title;
+                _notificationModel.Body = notification.Body;
+                var notificationResult = await _notificationService.SendNotification(_notificationModel);
                 await _unitOfWork.NotificationsConfirmed.AddAsync(new NotificationConfirmed() { NotificationId = notification.Id, UserId = _user.Id });
                 await _unitOfWork.SaveChangesAsync();
             }
